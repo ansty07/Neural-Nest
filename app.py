@@ -53,7 +53,7 @@ def set_theme(mode):
 
 # PAGE CONFIG
 st.set_page_config(
-    page_title="Mental Wellbeing Agent",
+    page_title="Mental Health Assistant",
     page_icon="🧠",
     layout="centered",
     initial_sidebar_state="auto"
@@ -67,7 +67,7 @@ with st.sidebar:
     agent_mode = st.radio("Choose Agent", ["Support Plan", "Listener (Vent & Comfort)"], horizontal=True)
 
 # HEADER & HERO SECTION
-st.markdown('<div class="big-title">🧠 Mental Wellbeing Agent</div>', unsafe_allow_html=True)
+st.markdown('<div class="big-title">🧠 Mental Health Assistant</div>', unsafe_allow_html=True)
 st.markdown('<div class="safe-space">', unsafe_allow_html=True)
 st.markdown("""
 <span class="agent-badge">🧠</span> <b>Assessment Agent:</b> Analyzes your situation and emotional needs  
@@ -81,7 +81,7 @@ st.markdown('</div>', unsafe_allow_html=True)
 col1, col2, col3 = st.columns([1,2,1])
 with col2:
     st.image(
-        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+        "https://static.vecteezy.com/system/resources/thumbnails/060/000/346/small_2x/green-grassy-field-leads-into-a-valley-filled-with-evergreen-trees-and-mountains-under-a-cloudy-sky-with-mist-rising-through-the-trees-photo.jpeg",
         caption="You are not alone. This is your space.",
         use_container_width=True
     )
@@ -404,5 +404,6 @@ If you're experiencing thoughts of self-harm or severe crisis:<br>
 </ul>
 </div>
 """, unsafe_allow_html=True)
+
 
 st.balloons()
