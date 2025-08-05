@@ -104,6 +104,15 @@ def set_theme(mode):
         .markdown-text-container, .stMarkdown {
             color: #fff !important;
         }
+        /* --- ADD THIS BLOCK BELOW --- */
+        div[role="listbox"], div[role="option"], li[role="option"] {
+            background: #fff !important;
+            color: #222 !important;
+        }
+        div[role="listbox"] * {
+            background: #fff !important;
+            color: #222 !important;
+        }
         </style>
         """, unsafe_allow_html=True)
 
@@ -463,6 +472,7 @@ If you're experiencing thoughts of self-harm or severe crisis:<br>
 
 
 st.balloons()
+
 
 
 
