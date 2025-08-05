@@ -122,6 +122,10 @@ def set_theme(mode):
             background: #fff !important;
               color: #222 !important;
         }
+        /* --- ADD THIS BLOCK BELOW --- */
+        div[role="option"][aria-selected="true"], li[role="option"][aria-selected="true"] {
+            background: #ffb347 !important;
+            color: #222 !important;
         </style>
         """, unsafe_allow_html=True)
 
@@ -481,6 +485,7 @@ If you're experiencing thoughts of self-harm or severe crisis:<br>
 
 
 st.balloons()
+
 
 
 
