@@ -36,18 +36,6 @@ def set_theme(mode):
             color: #fff !important;
             background: transparent !important;
         }
-        /* ADD THIS BLOCK FOR MULTISELECT/SELECTBOX */
-        .stMultiSelect, .stSelectbox {
-            background: #2d2f36 !important;
-        }
-        .stMultiSelect input, .stSelectbox input {
-            background: #2d2f36 !important;
-            color: #fff !important;
-        }
-        .stMultiSelect div[data-baseweb="tag"], .stMultiSelect div[data-baseweb="popover"] {
-            background: #393b41 !important;
-            color: #fff !important;
-        }
         html, body, [data-testid="stAppViewContainer"], [data-testid="stAppViewBlockContainer"], .main, .block-container {
             background: #2d2f36 !important;
             color: #fff !important;
@@ -435,6 +423,7 @@ If you're experiencing thoughts of self-harm or severe crisis:<br>
 
 
 st.balloons()
+
 
 
 
