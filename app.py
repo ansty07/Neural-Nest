@@ -131,6 +131,22 @@ def set_theme(mode):
             border-radius: 0.7em !important;
             font-weight: bold;
         }
+        /* --- ADD THIS BLOCK BELOW --- */
+        button[kind="primary"], .stButton>button {
+            background: #262730 !important;
+            color: #fff !important;
+            border: none !important;
+            border-radius: 0.5em !important;
+            transition: background 0.2s;
+        }
+        button[kind="primary"]:hover, .stButton>button:hover {
+            background: #444654 !important;
+            color: #fff !important;
+        }
+        button[kind="primary"]:active, .stButton>button:active {
+            background: #f63366 !important;
+            color: #fff !important;
+        }
         </style>
         """, unsafe_allow_html=True)
 
@@ -490,6 +506,7 @@ If you're experiencing thoughts of self-harm or severe crisis:<br>
 
 
 st.balloons()
+
 
 
 
