@@ -20,11 +20,21 @@ def set_theme(mode):
     else:
         st.markdown("""
         <style>
-        label, .st-emotion-cache-1kyxreq,
-        .stRadio label, .stCheckbox label,
-        .stRadio span, .stCheckbox span,
+        /* Force all text to white */
+        * { color: #fff !important; }
+
+        /* Make radio/checkbox backgrounds and text visible */
+        .stRadio, .stCheckbox {
+            background: transparent !important;
+            color: #fff !important;
+        }
+        .stRadio label, .stCheckbox label, .stRadio span, .stCheckbox span {
+            color: #fff !important;
+            background: transparent !important;
+        }
         .st-emotion-cache-1pahdxg, .st-emotion-cache-16nhj8e, .st-emotion-cache-19bqh2r {
             color: #fff !important;
+            background: transparent !important;
         }
         html, body, [data-testid="stAppViewContainer"], [data-testid="stAppViewBlockContainer"], .main, .block-container {
             background: #2d2f36 !important;
@@ -413,6 +423,7 @@ If you're experiencing thoughts of self-harm or severe crisis:<br>
 
 
 st.balloons()
+
 
 
 
