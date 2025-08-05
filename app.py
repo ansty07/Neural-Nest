@@ -42,7 +42,7 @@ def set_theme(mode):
             color: #fff !important;
         }
         .stAlert, .stInfo, .stSuccess, .stWarning {
-            background-color: #bd0978 !important;
+            background-color: #393b41 !important;
             color: #fff !important;
         }
         .markdown-text-container, .stMarkdown {
