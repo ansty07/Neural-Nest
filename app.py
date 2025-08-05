@@ -21,7 +21,7 @@ def set_theme(mode):
         st.markdown("""
         <style>
         html, body, [data-testid="stAppViewContainer"], [data-testid="stAppViewBlockContainer"], .main, .block-container {
-            background: #2d2f36 !important;
+            background: #fafbff !important;
             color: #fff !important;
         }
         .safe-space {
@@ -407,3 +407,4 @@ If you're experiencing thoughts of self-harm or severe crisis:<br>
 
 
 st.balloons()
+
