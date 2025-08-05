@@ -122,6 +122,16 @@ def set_theme(mode):
             background: #fff !important;
             color: #222 !important;
         }
+        * Highlight selected chips/tags in orange with white text */
+        .stMultiSelect div[data-baseweb="tag"], .stSelectbox div[data-baseweb="tag"] {
+            background: #ffb347 !important;
+            color: #fff !important;
+            border-radius: 0.7em !important;
+            font-weight: bold;
+        }
+        .stMultiSelect div[data-baseweb="tag"] span, .stSelectbox div[data-baseweb="tag"] span {
+            color: #fff !important;
+        }
         </style>
         """, unsafe_allow_html=True)
 
@@ -481,6 +491,7 @@ If you're experiencing thoughts of self-harm or severe crisis:<br>
 
 
 st.balloons()
+
 
 
 
