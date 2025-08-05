@@ -23,6 +23,9 @@ def set_theme(mode):
         label, .st-emotion-cache-1kyxreq {
             color: #fff !important;
         }
+        .stRadio label, .stCheckbox label, .st-emotion-cache-1pahdxg, .st-emotion-cache-16nhj8e, .st-emotion-cache-19bqh2r {
+            color: #fff !important;
+        }
         html, body, [data-testid="stAppViewContainer"], [data-testid="stAppViewBlockContainer"], .main, .block-container {
             background: #2d2f36 !important;
             color: #fff !important;
@@ -410,6 +413,7 @@ If you're experiencing thoughts of self-harm or severe crisis:<br>
 
 
 st.balloons()
+
 
 
 
