@@ -147,6 +147,22 @@ def set_theme(mode):
             background: #ff4b4b !important;
             color: #fff !important;
         }
+        /* --- ADD THIS BLOCK BELOW --- */
+        .stDownloadButton>button {
+            background: #262730 !important;
+            color: #fff !important;
+            border: none !important;
+            border-radius: 0.5em !important;
+            transition: background 0.2s;
+        }
+        .stDownloadButton>button:hover {
+            background: #444654 !important;
+            color: #fff !important;
+        }
+        .stDownloadButton>button:active {
+            background: #f63366 !important;
+            color: #fff !important;
+        }
         </style>
         """, unsafe_allow_html=True)
 
@@ -506,6 +522,7 @@ If you're experiencing thoughts of self-harm or severe crisis:<br>
 
 
 st.balloons()
+
 
 
 
