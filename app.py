@@ -20,6 +20,9 @@ def set_theme(mode):
     else:
         st.markdown("""
         <style>
+        label, .st-emotion-cache-1kyxreq {
+            color: #fff !important;
+        }
         html, body, [data-testid="stAppViewContainer"], [data-testid="stAppViewBlockContainer"], .main, .block-container {
             background: #2d2f36 !important;
             color: #fff !important;
@@ -407,6 +410,7 @@ If you're experiencing thoughts of self-harm or severe crisis:<br>
 
 
 st.balloons()
+
 
 
 
