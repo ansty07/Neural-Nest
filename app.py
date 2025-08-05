@@ -393,7 +393,7 @@ st.download_button(
 
 # HELPLINE SECTION
 st.markdown("""
-<div style="background: #fff3cd; border-radius: 1em; padding: 1em; margin-top: 2em;">
+<div style="background: #06b1c4; border-radius: 1em; padding: 1em; margin-top: 2em;">
 <b>⚠️ Important Notice</b><br>
 This application is a supportive tool and does not replace professional mental health care.<br>
 If you're experiencing thoughts of self-harm or severe crisis:<br>
