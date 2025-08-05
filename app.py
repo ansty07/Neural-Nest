@@ -144,7 +144,7 @@ def set_theme(mode):
             color: #fff !important;
         }
         button[kind="primary"]:active, .stButton>button:active {
-            background: #f63366 !important;
+            background: #ff4b4b !important;
             color: #fff !important;
         }
         </style>
@@ -506,6 +506,7 @@ If you're experiencing thoughts of self-harm or severe crisis:<br>
 
 
 st.balloons()
+
 
 
 
