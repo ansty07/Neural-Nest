@@ -126,7 +126,7 @@ def set_theme(mode):
         .stMultiSelect [data-baseweb="tag"], .stSelectbox [data-baseweb="tag"],
         .stMultiSelect [data-baseweb="tag"] span, .stSelectbox [data-baseweb="tag"] span,
         [data-baseweb="tag"], [data-baseweb="tag"] span {
-            background: #ffb347 !important;
+            background: #ff4b4b !important;
             color: #fff !important;
             border-radius: 0.7em !important;
             font-weight: bold;
@@ -490,6 +490,7 @@ If you're experiencing thoughts of self-harm or severe crisis:<br>
 
 
 st.balloons()
+
 
 
 
