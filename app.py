@@ -20,10 +20,10 @@ def set_theme(mode):
     else:
         st.markdown("""
         <style>
-        label, .st-emotion-cache-1kyxreq {
-            color: #fff !important;
-        }
-        .stRadio label, .stCheckbox label, .st-emotion-cache-1pahdxg, .st-emotion-cache-16nhj8e, .st-emotion-cache-19bqh2r {
+        label, .st-emotion-cache-1kyxreq,
+        .stRadio label, .stCheckbox label,
+        .stRadio span, .stCheckbox span,
+        .st-emotion-cache-1pahdxg, .st-emotion-cache-16nhj8e, .st-emotion-cache-19bqh2r {
             color: #fff !important;
         }
         html, body, [data-testid="stAppViewContainer"], [data-testid="stAppViewBlockContainer"], .main, .block-container {
@@ -413,6 +413,7 @@ If you're experiencing thoughts of self-harm or severe crisis:<br>
 
 
 st.balloons()
+
 
 
 
