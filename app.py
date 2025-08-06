@@ -20,6 +20,62 @@ def set_theme(mode):
     else:
         st.markdown("""
         <style>
+        /* Force all text to white */
+        * { color: #fff !important; }
+
+        /* Make radio/checkbox backgrounds and text visible */
+        .stRadio, .stCheckbox {
+            background: transparent !important;
+            color: #fff !important;
+        }
+        .stRadio label, .stCheckbox label, .stRadio span, .stCheckbox span {
+            color: #fff !important;
+            background: transparent !important;
+        }
+        .st-emotion-cache-1pahdxg, .st-emotion-cache-16nhj8e, .st-emotion-cache-19bqh2r {
+            color: #fff !important;
+            background: transparent !important;
+        }
+        /* ADD THIS BLOCK FOR MULTISELECT/SELECTBOX */
+        .stMultiSelect, .stSelectbox {
+            background: #2d2f36 !important;
+        }
+        .stMultiSelect input, .stSelectbox input {
+            background: #2d2f36 !important;
+            color: #fff !important;
+        }
+        .stMultiSelect div[data-baseweb="tag"], .stMultiSelect div[data-baseweb="popover"] {
+            background: #393b41 !important;
+            color: #fff !important;
+        }
+        /* --- ADD THIS BLOCK BELOW --- */
+        .stMultiSelect input::placeholder, .stSelectbox input::placeholder {
+            color: #bbb !important;
+            opacity: 1 !important;
+        }
+        .stMultiSelect span, .stSelectbox span, .stMultiSelect div, .stSelectbox div {
+            color: #fff !important;
+        }
+        [data-baseweb="select"] div, [data-baseweb="select"] span {
+            background: #393b41 !important;
+            color: #fff !important;
+        }
+        /* --- ADD THIS BLOCK BELOW --- */
+        [data-baseweb="select"] {
+            background: #fff !important;
+            color: #222 !important;
+        }
+        [data-baseweb="select"] * {
+            background: #fff !important;
+            color: #222 !important;
+        }
+        .stMultiSelect input::placeholder, .stSelectbox input::placeholder {
+            color: #222 !important;
+            opacity: 1 !important;
+        }
+        .stMultiSelect span, .stSelectbox span {
+            color: #222 !important;
+        }
         html, body, [data-testid="stAppViewContainer"], [data-testid="stAppViewBlockContainer"], .main, .block-container {
             background: #2d2f36 !important;
             color: #fff !important;
@@ -106,7 +162,7 @@ def set_theme(mode):
             background: #ff4b4b !important;
             color: #fff !important;
         }
-          /* Force dark sidebar in dark mode */
+        /* Force dark sidebar in dark mode */
         [data-testid="stSidebar"], .css-1d391kg {
             background: #2d2f36 !important;
             color: #fff !important;
@@ -118,18 +174,14 @@ def set_theme(mode):
         }
         header[data-testid="stHeader"] * {
             color: #fff !important;
-       }
-        
-        /* --- ADD THIS BLOCK BELOW --- */
+        }
         header[data-testid="stHeader"] svg {
             color: #fff !important;
             fill: #fff !important;
             stroke: #fff !important;
         }
         </style>
-        </style>
         """, unsafe_allow_html=True)
-
 # PAGE CONFIG
 st.set_page_config(
     page_title="Mental Health Assistant",
@@ -452,9 +504,9 @@ elif agent_mode == "Listener (Vent & Comfort)":
 st.markdown("""
 ---
 ### 🎵 Stress Reliever Song
-Listen to "Weightless" by Marconi Union, a scientifically recognized stress-relief track:
+Listen to "Everdream" by Soul Factory, a scientifically recognized stress-relief track:
 
-<iframe width="100%" height="120" src="https://www.youtube.com/embed/UfcAVejslrU?si=J1AP15Blg4jtAw6L" title="Weightless by Marconi Union" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="100%" height="120" src="https://www.youtube.com/embed/RCMXO9sBIcU?si=J1Ml5zfnapoGjgjc" title="Everdream by Soul Factory" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 """, unsafe_allow_html=True)
 
 st.markdown("""
@@ -466,10 +518,9 @@ txt_data = get_full_session_text()
 st.download_button(
     label="Download as TXT",
     data=txt_data,
-    file_name="mental_wellbeing_session.txt",
+    file_name="music_therapy_session.txt",
     mime="text/plain"
 )
-
 # HELPLINE SECTION
 st.markdown("""
 <div style="background: #06b1c4; border-radius: 1em; padding: 1em; margin-top: 2em;">
@@ -477,8 +528,9 @@ st.markdown("""
 This application is a supportive tool and does not replace professional mental health care.<br>
 If you're experiencing thoughts of self-harm or severe crisis:<br>
 <ul>
-<li>Call National Crisis Hotline: <b>988</b></li>
-<li>Call Emergency Services: <b>911</b></li>
+<li> National Institute of Mental Health and Neurosciences (NIMHANS) helpline: <b>080-46110007</b></li>
+<li> Mental Health Rehabilitation Helpline "KIRAN”: <b>1800-500-0019</b></li>
+<li> Call Emergency Services: <b>112</b></li>
 <li>Seek immediate professional help</li>
 </ul>
 </div>
@@ -486,55 +538,3 @@ If you're experiencing thoughts of self-harm or severe crisis:<br>
 
 
 st.balloons()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
