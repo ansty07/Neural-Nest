@@ -510,9 +510,9 @@ st.markdown("""
 This application is a supportive tool and does not replace professional mental health care.<br>
 If you're experiencing thoughts of self-harm or severe crisis:<br>
 <ul>
-<li> 24x7 Toll-Free Mental Health Rehabilitation Helpline "KIRAN”: <b>1800-500-0019</b></li>
 <li> National Institute of Mental Health and Neurosciences (NIMHANS) helpline: <b>080-46110007</b></li>
-<li>Call Emergency Services: <b>112</b></li>
+<li> Mental Health Rehabilitation Helpline "KIRAN”: <b>1800-500-0019</b></li>
+<li> Call Emergency Services: <b>112</b></li>
 <li>Seek immediate professional help</li>
 </ul>
 </div>
@@ -520,6 +520,7 @@ If you're experiencing thoughts of self-harm or severe crisis:<br>
 
 
 st.balloons()
+
 
 
 
