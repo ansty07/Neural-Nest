@@ -168,6 +168,14 @@ def set_theme(mode):
             background: #fff !important;
             color: #222 !important;
         }
+        /* FINAL: Force dark text in white input boxes, override global white */
+        .stTextInput > div > input,
+        .stTextArea > div > textarea {
+            background: #fff !important;
+            color: #222 !important;
+            -webkit-text-fill-color: #222 !important; /* For Chrome/Safari */
+            caret-color: #222 !important;
+        }
         </style>
         """, unsafe_allow_html=True)
 
@@ -526,6 +534,7 @@ If you're experiencing thoughts of self-harm or severe crisis:<br>
 
 
 st.balloons()
+
 
 
 
