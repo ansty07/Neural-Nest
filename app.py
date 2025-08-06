@@ -162,6 +162,11 @@ def set_theme(mode):
             background: #ff4b4b !important;
             color: #fff !important;
         }
+        /* Force dark sidebar in dark mode */
+        [data-testid="stSidebar"], .css-1d391kg {
+            background: #2d2f36 !important;
+            color: #fff !important;
+        }
         </style>
         """, unsafe_allow_html=True)
 # PAGE CONFIG
@@ -520,6 +525,7 @@ If you're experiencing thoughts of self-harm or severe crisis:<br>
 
 
 st.balloons()
+
 
 
 
