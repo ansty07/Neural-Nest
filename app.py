@@ -6,7 +6,182 @@ from fpdf import FPDF
 import re
 
 # THEME SETUP
+def set_theme(mode):
+    if mode == "Light":
+        st.markdown("""
+        <style>
+        body { background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%); }
+        .safe-space { background: rgba(255,255,255,0.85); border-radius: 1.2em; padding: 2em 2em 1em 2em; box-shadow: 0 4px 32px 0 rgba(60,60,124,0.08); }
+        .big-title { font-size: 2.7rem; font-weight: bold; color: #3c3c7c; margin-bottom: 0.5em; }
+        .agent-badge { font-size: 1.5rem; margin-right: 0.5em; }
+        .heart { color: #ff6f91; font-size: 2.2rem; vertical-align: middle; }
+        </style>
+        """, unsafe_allow_html=True)
+    else:
+        st.markdown("""
+        <style>
+        /* Force all text to white */
+        * { color: #fff !important; }
 
+        /* Make radio/checkbox backgrounds and text visible */
+        .stRadio, .stCheckbox {
+            background: transparent !important;
+            color: #fff !important;
+        }
+        .stRadio label, .stCheckbox label, .stRadio span, .stCheckbox span {
+            color: #fff !important;
+            background: transparent !important;
+        }
+        .st-emotion-cache-1pahdxg, .st-emotion-cache-16nhj8e, .st-emotion-cache-19bqh2r {
+            color: #fff !important;
+            background: transparent !important;
+        }
+        /* ADD THIS BLOCK FOR MULTISELECT/SELECTBOX */
+        .stMultiSelect, .stSelectbox {
+            background: #2d2f36 !important;
+        }
+        .stMultiSelect input, .stSelectbox input {
+            background: #2d2f36 !important;
+            color: #fff !important;
+        }
+        .stMultiSelect div[data-baseweb="tag"], .stMultiSelect div[data-baseweb="popover"] {
+            background: #393b41 !important;
+            color: #fff !important;
+        }
+        /* --- ADD THIS BLOCK BELOW --- */
+        .stMultiSelect input::placeholder, .stSelectbox input::placeholder {
+            color: #bbb !important;
+            opacity: 1 !important;
+        }
+        .stMultiSelect span, .stSelectbox span, .stMultiSelect div, .stSelectbox div {
+            color: #fff !important;
+        }
+        [data-baseweb="select"] div, [data-baseweb="select"] span {
+            background: #393b41 !important;
+            color: #fff !important;
+        }
+        /* --- ADD THIS BLOCK BELOW --- */
+        [data-baseweb="select"] {
+            background: #fff !important;
+            color: #222 !important;
+        }
+        [data-baseweb="select"] * {
+            background: #fff !important;
+            color: #222 !important;
+        }
+        .stMultiSelect input::placeholder, .stSelectbox input::placeholder {
+            color: #222 !important;
+            opacity: 1 !important;
+        }
+        .stMultiSelect span, .stSelectbox span {
+            color: #222 !important;
+        }
+        html, body, [data-testid="stAppViewContainer"], [data-testid="stAppViewBlockContainer"], .main, .block-container {
+            background: #2d2f36 !important;
+            color: #fff !important;
+        }
+        .safe-space {
+            background: rgba(50,50,60,0.92);
+            border-radius: 1.2em;
+            padding: 2em 2em 1em 2em;
+            box-shadow: 0 4px 32px 0 rgba(30,30,40,0.12);
+        }
+        .big-title { font-size: 2.7rem; font-weight: bold; color: #fff; margin-bottom: 0.5em; }
+        .agent-badge { font-size: 1.5rem; margin-right: 0.5em; }
+        .heart { color: #ffb6c1; font-size: 2.2rem; vertical-align: middle; }
+        .stTextInput > div > input, .stTextArea > div > textarea, .stSelectbox > div > div, .stMultiSelect > div > div {
+            background: #2d2f36 !important;
+            color: #fff !important;
+        }
+        [data-testid="stSidebar"], .css-1d391kg {
+            background: #2d2f36 !important;
+            color: #fff !important;
+        }
+        .stAlert, .stInfo, .stSuccess, .stWarning {
+            background-color: #393b41 !important;
+            color: #fff !important;
+        }
+        .markdown-text-container, .stMarkdown {
+            color: #fff !important;
+        }
+        /* --- ADD THIS BLOCK BELOW --- */
+        div[role="listbox"], div[role="option"], li[role="option"] {
+            background: #fff !important;
+            color: #222 !important;
+        }
+        div[role="listbox"] * {
+            background: #fff !important;
+            color: #222 !important;
+        }
+        /* Also target Baseweb popover root */
+        [data-baseweb="popover"] {
+            background: #fff !important;
+            color: #222 !important;
+        }
+        [data-baseweb="popover"] * {
+            background: #fff !important;
+            color: #222 !important;
+        }
+        /* FINAL: Force selected chips/tags to orange with white text, most specific */
+        .stMultiSelect [data-baseweb="tag"], .stSelectbox [data-baseweb="tag"],
+        .stMultiSelect [data-baseweb="tag"] span, .stSelectbox [data-baseweb="tag"] span,
+        [data-baseweb="tag"], [data-baseweb="tag"] span {
+            background: #ff4b4b !important;
+            color: #fff !important;
+            border-radius: 0.7em !important;
+        }
+        /* --- ADD THIS BLOCK BELOW --- */
+        button[kind="primary"], .stButton>button {
+            background: #262730 !important;
+            color: #fff !important;
+            border: none !important;
+            border-radius: 0.5em !important;
+            transition: background 0.2s;
+        }
+        button[kind="primary"]:hover, .stButton>button:hover {
+            background: #444654 !important;
+            color: #fff !important;
+        }
+        button[kind="primary"]:active, .stButton>button:active {
+            background: #ff4b4b !important;
+            color: #fff !important;
+        }
+        /* --- ADD THIS BLOCK BELOW --- */
+        .stDownloadButton>button {
+            background: #262730 !important;
+            color: #fff !important;
+            border: none !important;
+            border-radius: 0.5em !important;
+            transition: background 0.2s;
+        }
+        .stDownloadButton>button:hover {
+            background: #444654 !important;
+            color: #fff !important;
+        }
+        .stDownloadButton>button:active {
+            background: #ff4b4b !important;
+            color: #fff !important;
+        }
+         /* Force dark sidebar in dark mode */
+        [data-testid="stSidebar"], .css-1d391kg {
+            background: #2d2f36 !important;
+            color: #fff !important;
+        }
+        /* --- ADD THIS BLOCK BELOW --- */
+        header[data-testid="stHeader"] {
+            background: #2d2f36 !important;
+            color: #fff !important;
+        }
+        header[data-testid="stHeader"] * {
+            color: #fff !important;
+        }
+        header[data-testid="stHeader"] svg {
+            color: #fff !important;
+            fill: #fff !important;
+            stroke: #fff !important;
+        }
+        </style>
+        """, unsafe_allow_html=True)
 # PAGE CONFIG
 st.set_page_config(
     page_title="Mental Health Assistant",
@@ -363,6 +538,7 @@ If you're experiencing thoughts of self-harm or severe crisis:<br>
 
 
 st.balloons()
+
 
 
 
