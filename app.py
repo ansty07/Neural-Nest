@@ -60,22 +60,7 @@ def set_theme(mode):
             background: #393b41 !important;
             color: #fff !important;
         }
-        /* --- ADD THIS BLOCK BELOW --- */
-        [data-baseweb="select"] {
-            background: #fff !important;
-            color: #222 !important;
-        }
-        [data-baseweb="select"] * {
-            background: #fff !important;
-            color: #222 !important;
-        }
-        .stMultiSelect input::placeholder, .stSelectbox input::placeholder {
-            color: #222 !important;
-            opacity: 1 !important;
-        }
-        .stMultiSelect span, .stSelectbox span {
-            color: #222 !important;
-        }
+        
         html, body, [data-testid="stAppViewContainer"], [data-testid="stAppViewBlockContainer"], .main, .block-container {
             background: #2d2f36 !important;
             color: #fff !important;
@@ -104,23 +89,22 @@ def set_theme(mode):
         .markdown-text-container, .stMarkdown {
             color: #fff !important;
         }
-        /* --- ADD THIS BLOCK BELOW --- */
-        div[role="listbox"], div[role="option"], li[role="option"] {
-            background: #fff !important;
-            color: #222 !important;
+        /* DARK MODE: Inputs, Textareas, Selects, Popovers, Listboxes */
+        input, textarea, select,
+        .stTextInput input, .stTextArea textarea,
+        [data-baseweb="select"], [data-baseweb="select"] *,
+        [data-baseweb="popover"], [data-baseweb="popover"] *,
+        div[role="listbox"], div[role="option"], li[role="option"], div[role="listbox"] * {
+            background: #2d2f36 !important;
+            color: #fff !important;
+            caret-color: #fff !important;
+            border-color: #444654 !important;
         }
-        div[role="listbox"] * {
-            background: #fff !important;
-            color: #222 !important;
-        }
-        /* Also target Baseweb popover root */
-        [data-baseweb="popover"] {
-            background: #fff !important;
-            color: #222 !important;
-        }
-        [data-baseweb="popover"] * {
-            background: #fff !important;
-            color: #222 !important;
+
+        .stMultiSelect input::placeholder, .stSelectbox input::placeholder,
+        input::placeholder, textarea::placeholder {
+            color: #bbb !important;
+            opacity: 1 !important;
         }
         /* FINAL: Force selected chips/tags to orange with white text, most specific */
         .stMultiSelect [data-baseweb="tag"], .stSelectbox [data-baseweb="tag"],
@@ -538,6 +522,7 @@ If you're experiencing thoughts of self-harm or severe crisis:<br>
 
 
 st.balloons()
+
 
 
 
