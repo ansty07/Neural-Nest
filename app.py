@@ -20,62 +20,6 @@ def set_theme(mode):
     else:
         st.markdown("""
         <style>
-        /* Force all text to white */
-        * { color: #fff !important; }
-
-        /* Make radio/checkbox backgrounds and text visible */
-        .stRadio, .stCheckbox {
-            background: transparent !important;
-            color: #fff !important;
-        }
-        .stRadio label, .stCheckbox label, .stRadio span, .stCheckbox span {
-            color: #fff !important;
-            background: transparent !important;
-        }
-        .st-emotion-cache-1pahdxg, .st-emotion-cache-16nhj8e, .st-emotion-cache-19bqh2r {
-            color: #fff !important;
-            background: transparent !important;
-        }
-        /* ADD THIS BLOCK FOR MULTISELECT/SELECTBOX */
-        .stMultiSelect, .stSelectbox {
-            background: #2d2f36 !important;
-        }
-        .stMultiSelect input, .stSelectbox input {
-            background: #2d2f36 !important;
-            color: #fff !important;
-        }
-        .stMultiSelect div[data-baseweb="tag"], .stMultiSelect div[data-baseweb="popover"] {
-            background: #393b41 !important;
-            color: #fff !important;
-        }
-        /* --- ADD THIS BLOCK BELOW --- */
-        .stMultiSelect input::placeholder, .stSelectbox input::placeholder {
-            color: #bbb !important;
-            opacity: 1 !important;
-        }
-        .stMultiSelect span, .stSelectbox span, .stMultiSelect div, .stSelectbox div {
-            color: #fff !important;
-        }
-        [data-baseweb="select"] div, [data-baseweb="select"] span {
-            background: #393b41 !important;
-            color: #fff !important;
-        }
-        /* --- ADD THIS BLOCK BELOW --- */
-        [data-baseweb="select"] {
-            background: #fff !important;
-            color: #222 !important;
-        }
-        [data-baseweb="select"] * {
-            background: #fff !important;
-            color: #222 !important;
-        }
-        .stMultiSelect input::placeholder, .stSelectbox input::placeholder {
-            color: #222 !important;
-            opacity: 1 !important;
-        }
-        .stMultiSelect span, .stSelectbox span {
-            color: #222 !important;
-        }
         html, body, [data-testid="stAppViewContainer"], [data-testid="stAppViewBlockContainer"], .main, .block-container {
             background: #2d2f36 !important;
             color: #fff !important;
@@ -104,84 +48,14 @@ def set_theme(mode):
         .markdown-text-container, .stMarkdown {
             color: #fff !important;
         }
-        /* --- ADD THIS BLOCK BELOW --- */
-        div[role="listbox"], div[role="option"], li[role="option"] {
-            background: #fff !important;
-            color: #222 !important;
-        }
-        div[role="listbox"] * {
-            background: #fff !important;
-            color: #222 !important;
-        }
-        /* Also target Baseweb popover root */
-        [data-baseweb="popover"] {
-            background: #fff !important;
-            color: #222 !important;
-        }
-        [data-baseweb="popover"] * {
-            background: #fff !important;
-            color: #222 !important;
-        }
-        /* FINAL: Force selected chips/tags to orange with white text, most specific */
-        .stMultiSelect [data-baseweb="tag"], .stSelectbox [data-baseweb="tag"],
-        .stMultiSelect [data-baseweb="tag"] span, .stSelectbox [data-baseweb="tag"] span,
-        [data-baseweb="tag"], [data-baseweb="tag"] span {
-            background: #ff4b4b !important;
-            color: #fff !important;
-            border-radius: 0.7em !important;
-        }
-        /* --- ADD THIS BLOCK BELOW --- */
-        button[kind="primary"], .stButton>button {
-            background: #262730 !important;
-            color: #fff !important;
-            border: none !important;
-            border-radius: 0.5em !important;
-            transition: background 0.2s;
-        }
-        button[kind="primary"]:hover, .stButton>button:hover {
-            background: #444654 !important;
-            color: #fff !important;
-        }
-        button[kind="primary"]:active, .stButton>button:active {
-            background: #ff4b4b !important;
-            color: #fff !important;
-        }
-        /* --- ADD THIS BLOCK BELOW --- */
-        .stDownloadButton>button {
-            background: #262730 !important;
-            color: #fff !important;
-            border: none !important;
-            border-radius: 0.5em !important;
-            transition: background 0.2s;
-        }
-        .stDownloadButton>button:hover {
-            background: #444654 !important;
-            color: #fff !important;
-        }
-        .stDownloadButton>button:active {
-            background: #ff4b4b !important;
-            color: #fff !important;
-        }
-        /* Force dark sidebar in dark mode */
-        [data-testid="stSidebar"], .css-1d391kg {
-            background: #2d2f36 !important;
-            color: #fff !important;
-        }
-        /* --- ADD THIS BLOCK BELOW --- */
-        header[data-testid="stHeader"] {
-            background: #2d2f36 !important;
-            color: #fff !important;
-        }
-        header[data-testid="stHeader"] * {
-            color: #fff !important;
-        }
-        header[data-testid="stHeader"] svg {
+        /* Toolbar icon color fix for dark mode */
+        .icon, .toolbar-icon, [class*="icon"], [class*="Icon"] {
             color: #fff !important;
             fill: #fff !important;
-            stroke: #fff !important;
         }
         </style>
         """, unsafe_allow_html=True)
+
 # PAGE CONFIG
 st.set_page_config(
     page_title="Mental Health Assistant",
@@ -198,7 +72,7 @@ with st.sidebar:
     agent_mode = st.radio("Choose Agent", ["Support Plan", "Listener (Vent & Comfort)"], horizontal=True)
 
 # HEADER & HERO SECTION
-st.markdown('<div class="big-title">🧠 Mental Health Assistant</div>', unsafe_allow_html=True)
+st.markdown('<div class="big-title">🧠 Mental Wellbeing Agent</div>', unsafe_allow_html=True)
 st.markdown('<div class="safe-space">', unsafe_allow_html=True)
 st.markdown("""
 <span class="agent-badge">🧠</span> <b>Assessment Agent:</b> Analyzes your situation and emotional needs  
@@ -212,7 +86,7 @@ st.markdown('</div>', unsafe_allow_html=True)
 col1, col2, col3 = st.columns([1,2,1])
 with col2:
     st.image(
-        "https://static.vecteezy.com/system/resources/thumbnails/060/000/346/small_2x/green-grassy-field-leads-into-a-valley-filled-with-evergreen-trees-and-mountains-under-a-cloudy-sky-with-mist-rising-through-the-trees-photo.jpeg",
+        "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Fpremium-photo%2Frain-forest-mountains-misty-mountain-landscape-hills-rainy-day_29138076.htm&psig=AOvVaw3tcKaCnh6Vf7sx-uHjV-1B&ust=1754425919950000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCNjYhoCA8o4DFQAAAAAdAAAAABBS",
         caption="You are not alone. This is your space.",
         use_container_width=True
     )
@@ -504,9 +378,9 @@ elif agent_mode == "Listener (Vent & Comfort)":
 st.markdown("""
 ---
 ### 🎵 Stress Reliever Song
-Listen to "Everdream" by Soul Factory, a scientifically recognized stress-relief track:
+Listen to "Weightless" by Marconi Union, a scientifically recognized stress-relief track:
 
-<iframe width="100%" height="120" src="https://www.youtube.com/embed/RCMXO9sBIcU?si=J1Ml5zfnapoGjgjc" title="Everdream by Soul Factory" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="100%" height="120" src="https://www.youtube.com/embed/UfcAVejslrU?si=J1AP15Blg4jtAw6L" title="Weightless by Marconi Union" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 """, unsafe_allow_html=True)
 
 st.markdown("""
@@ -518,23 +392,22 @@ txt_data = get_full_session_text()
 st.download_button(
     label="Download as TXT",
     data=txt_data,
-    file_name="music_therapy_session.txt",
+    file_name="mental_wellbeing_session.txt",
     mime="text/plain"
 )
+
 # HELPLINE SECTION
 st.markdown("""
-<div style="background: #06b1c4; border-radius: 1em; padding: 1em; margin-top: 2em;">
+<div style="background: #fff3cd; border-radius: 1em; padding: 1em; margin-top: 2em;">
 <b>⚠️ Important Notice</b><br>
 This application is a supportive tool and does not replace professional mental health care.<br>
 If you're experiencing thoughts of self-harm or severe crisis:<br>
 <ul>
-<li> National Institute of Mental Health and Neurosciences (NIMHANS) helpline: <b>080-46110007</b></li>
-<li> Mental Health Rehabilitation Helpline "KIRAN”: <b>1800-500-0019</b></li>
-<li> Call Emergency Services: <b>112</b></li>
+<li>Call National Crisis Hotline: <b>988</b></li>
+<li>Call Emergency Services: <b>911</b></li>
 <li>Seek immediate professional help</li>
 </ul>
 </div>
 """, unsafe_allow_html=True)
-
 
 st.balloons()
