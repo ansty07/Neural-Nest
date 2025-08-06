@@ -483,7 +483,7 @@ elif agent_mode == "Listener (Vent & Comfort)":
 for speaker, msg in st.session_state.vent_history:
     if speaker == "user":
         st.markdown(
-            f"<div style='background:#e0c3fc;padding:0.7em 1em;border-radius:0.8em;margin-bottom:0.2em;'><b>You:</b> {msg}</div>",
+            f"<div style='background:#d40d6d;padding:0.7em 1em;border-radius:0.8em;margin-bottom:0.2em;'><b>You:</b> {msg}</div>",
             unsafe_allow_html=True
         )
     else:
@@ -529,6 +529,7 @@ If you're experiencing thoughts of self-harm or severe crisis:<br>
 
 
 st.balloons()
+
 
 
 
