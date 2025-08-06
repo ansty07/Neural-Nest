@@ -10,7 +10,7 @@ def set_theme(mode):
     if mode == "Light":
         st.markdown("""
         <style>
-        body { background: linear-gradient(120deg, #d40d6d 0%, #8ec5fc 100%); }
+        body { background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%); }
         .safe-space { background: rgba(255,255,255,0.85); border-radius: 1.2em; padding: 2em 2em 1em 2em; box-shadow: 0 4px 32px 0 rgba(60,60,124,0.08); }
         .big-title { font-size: 2.7rem; font-weight: bold; color: #3c3c7c; margin-bottom: 0.5em; }
         .agent-badge { font-size: 1.5rem; margin-right: 0.5em; }
@@ -496,7 +496,7 @@ elif agent_mode == "Listener (Vent & Comfort)":
     # Display conversation
     for speaker, msg in st.session_state.vent_history:
         if speaker == "user":
-            st.markdown(f"<div style='background:#d40d6d;padding:0.7em 1em;border-radius:0.8em;margin-bottom:0.2em;'><b>You:</b> {msg}</div>", unsafe_allow_html=True)
+            st.markdown(f"<div style='background:#e0c3fc;padding:0.7em 1em;border-radius:0.8em;margin-bottom:0.2em;'><b>You:</b> {msg}</div>", unsafe_allow_html=True)
         else:
             st.markdown(f"<div style='background:#f8f9fa;padding:0.7em 1em;border-radius:0.8em;margin-bottom:1em;'><b>Agent:</b> {msg}</div>", unsafe_allow_html=True)
 
@@ -538,5 +538,3 @@ If you're experiencing thoughts of self-harm or severe crisis:<br>
 
 
 st.balloons()
-
-
