@@ -477,6 +477,15 @@ elif agent_mode == "Listener (Vent & Comfort)":
         else:
             st.warning("Please write something to share.")
 
+    # Display conversation
+    for speaker, msg in st.session_state.vent_history:
+        if speaker == "user":
+            st.markdown(f"<div style='background:#e0c3fc;padding:0.7em 1em;border-radius:0.8em;margin-bottom:0.2em;'><b>You:</b> {msg}</div>", unsafe_allow_html=True)
+        else:
+            st.markdown(f"<div style='background:#f8f9fa;padding:0.7em 1em;border-radius:0.8em;margin-bottom:1em;'><b>Agent:</b> {msg}</div>", unsafe_allow_html=True)
+
+# STRESS RELIEVER SONG & DOWNLOAD SECTION
+
 st.markdown("""
 ---
 ### 🎵 Stress Reliever Song
