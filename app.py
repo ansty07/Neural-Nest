@@ -478,8 +478,16 @@ elif agent_mode == "Listener (Vent & Comfort)":
             st.warning("Please write something to share.")
 
     # Display conversation
-    agent_bg = "#f8f9fa" if mode == "Light" else "#262730"
+    print("MODE IS:", mode)
+with st.sidebar:
+    st.title("🌓 Theme & Mode")
+    mode = st.radio("Choose Mode", ["Light", "Dark"], horizontal=True)
+    # ... other sidebar stuff ...
+
+# You must have 'mode' defined before this block!
+agent_bg = "#f8f9fa" if mode == "Light" else "#262730"
 agent_color = "#222" if mode == "Light" else "#fff"
+
 for speaker, msg in st.session_state.vent_history:
     if speaker == "user":
         st.markdown(
@@ -529,6 +537,7 @@ If you're experiencing thoughts of self-harm or severe crisis:<br>
 
 
 st.balloons()
+
 
 
 
