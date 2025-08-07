@@ -53,6 +53,6 @@ Each agent works independently but contributes to a collective support system fo
 ## ⚠️ Disclaimer
 This app is a **supportive tool** and not a substitute for licensed mental health services.  
 If you're experiencing a crisis or need immediate help:
-- Call National Crisis Hotline: 988
-- Call Emergency Services: 911
-- Seek immediate professional help
+- National Institute of Mental Health and Neurosciences (NIMHANS) helpline: 080-46110007
+- Mental Health Rehabilitation Helpline "KIRAN”: 1800-500-0019
+- Call Emergency Services: 112
