@@ -26,7 +26,7 @@ Includes:
 - Designed for users to freely vent in a judgment-free space
 
 # 🎵 Stress Reliever Integration
-- Embedded YouTube player for “Weightless” by Marconi Union—scientifically shown to reduce stress
+- Embedded YouTube player for “Everdream” by  Soul Factory—scientifically shown to reduce stress
 
 # ⬇️ Session Export
 - Download complete session logs for personal reflection or to share with a mental health professional
