@@ -1,7 +1,7 @@
 # Personal_AIAgent_Mental_Health
 A supportive mental health assistant powered by **multiple AI agents** - designed to offer emotional support, personalized action plans and a safe space to express your feelings.
 
-This is the live link of the application - https://mental-health-ai-buq5tnmu4heftjqptscexu.streamlit.app/ 
+This is the live link of the application - https://neural-nest-ewktdxezyv2xtzjajkmcnk.streamlit.app/ 
 # Overview
 This is a **Streamlit-based web application** that provides users with a judgment-free environment to assess their mental wellbeing and receive guidance. 
 It uses a **multi-agent architecture**, with each AI agent handling a different aspect of the support process.
