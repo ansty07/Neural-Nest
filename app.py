@@ -23,7 +23,7 @@ def set_theme(mode):
         /* Force all text to white */
         * { color: #fff !important; }
 
-        /* Make radio/checkbox backgrounds and text visible */
+        
         .stRadio, .stCheckbox {
             background: transparent !important;
             color: #fff !important;
@@ -48,7 +48,7 @@ def set_theme(mode):
             background: #393b41 !important;
             color: #fff !important;
         }
-        /* --- ADD THIS BLOCK BELOW --- */
+        
         .stMultiSelect input::placeholder, .stSelectbox input::placeholder {
             color: #bbb !important;
             opacity: 1 !important;
@@ -89,7 +89,7 @@ def set_theme(mode):
         .markdown-text-container, .stMarkdown {
             color: #fff !important;
         }
-        /* DARK MODE: Inputs, Textareas, Selects, Popovers, Listboxes */
+        
         input, textarea, select,
         .stTextInput input, .stTextArea textarea,
         [data-baseweb="select"], [data-baseweb="select"] *,
@@ -106,7 +106,7 @@ def set_theme(mode):
             color: #bbb !important;
             opacity: 1 !important;
         }
-        /* FINAL: Force selected chips/tags to orange with white text, most specific */
+        
         .stMultiSelect [data-baseweb="tag"], .stSelectbox [data-baseweb="tag"],
         .stMultiSelect [data-baseweb="tag"] span, .stSelectbox [data-baseweb="tag"] span,
         [data-baseweb="tag"], [data-baseweb="tag"] span {
@@ -114,7 +114,7 @@ def set_theme(mode):
             color: #fff !important;
             border-radius: 0.7em !important;
         }
-        /* --- ADD THIS BLOCK BELOW --- */
+        
         button[kind="primary"], .stButton>button {
             background: #262730 !important;
             color: #fff !important;
@@ -130,7 +130,7 @@ def set_theme(mode):
             background: #ff4b4b !important;
             color: #fff !important;
         }
-        /* --- ADD THIS BLOCK BELOW --- */
+        
         .stDownloadButton>button {
             background: #262730 !important;
             color: #fff !important;
@@ -146,12 +146,12 @@ def set_theme(mode):
             background: #ff4b4b !important;
             color: #fff !important;
         }
-         /* Force dark sidebar in dark mode */
+         
         [data-testid="stSidebar"], .css-1d391kg {
             background: #2d2f36 !important;
             color: #fff !important;
         }
-        /* --- ADD THIS BLOCK BELOW --- */
+        
         header[data-testid="stHeader"] {
             background: #2d2f36 !important;
             color: #fff !important;
@@ -397,7 +397,7 @@ if agent_mode == "Support Plan":
             st.warning(followup)
             log_session("## Long-term Support Strategy\n" + followup)
 
-# --- ADD THE FOLLOW-UP BLOCK HERE ---
+# --- THE FOLLOW-UP BLOCK HERE ---
 st.markdown("## 🔁 Follow-up")
 st.markdown("Would you like a short guided script for the following?")
 
