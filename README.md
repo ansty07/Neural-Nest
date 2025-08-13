@@ -45,7 +45,7 @@ The application uses a **multi-agent design**, each with its own responsibility:
 Each agent works independently but contributes to a collective support system for the user needs.
 
 # 🛠️ Technologies Used
-- **Python 3.9+**
+- **Python 3.13+**
 - **Streamlit** for interactive UI
 - **FPDF** for PDF session downloads
 - **PIL (Pillow)** for image handling
