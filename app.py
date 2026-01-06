@@ -5,7 +5,6 @@ import io
 from fpdf import FPDF
 import re
 
-# THEME SETUP
 def set_theme(mode):
     if mode == "Light":
         st.markdown("""
@@ -166,7 +165,7 @@ def set_theme(mode):
         }
         </style>
         """, unsafe_allow_html=True)
-# PAGE CONFIG
+
 st.set_page_config(
     page_title="Mental Health Assistant",
     page_icon="🧠",
@@ -174,14 +173,14 @@ st.set_page_config(
     initial_sidebar_state="auto"
 )
 
-# MODE SELECTOR
+
 with st.sidebar:
     st.title("🌓 Theme & Mode")
     mode = st.radio("Choose Mode", ["Light", "Dark"], horizontal=True)
     set_theme(mode)
     agent_mode = st.radio("Choose Agent", ["Support Plan", "Listener (Vent & Comfort)"], horizontal=True)
 
-# HEADER & HERO SECTION
+
 st.markdown('<div class="big-title">🧠 Mental Health Assistant</div>', unsafe_allow_html=True)
 st.markdown('<div class="safe-space">', unsafe_allow_html=True)
 st.markdown("""
@@ -192,7 +191,7 @@ st.markdown("""
 st.markdown('<span class="heart">♥️</span> <i>This is a safe, judgment-free zone.<br>Be as open as you wish—your feelings matter here.</i>', unsafe_allow_html=True)
 st.markdown('</div>', unsafe_allow_html=True)
 
-# GRAPHICS
+
 col1, col2, col3 = st.columns([1,2,1])
 with col2:
     st.image(
@@ -201,14 +200,14 @@ with col2:
         use_container_width=True
     )
 
-# SESSION LOGGING
+
 if "session_log" not in st.session_state:
     st.session_state.session_log = []
 
 def log_session(text):
     st.session_state.session_log.append(text)
 
-# SUPPORT PLAN MODE
+
 def assessment_agent(state):
     assessment = f"""
 Thank you for sharing your feelings. You mentioned feeling **{state['mental_state']}**.
@@ -262,7 +261,7 @@ def followup_agent(state):
     followup += "- If family issues persist, consider family counseling or support groups.\n"
     return followup
 
-# FOLLOW-UP TIPS DATA 
+
 def show_followup_tips(key):
     if key == "breathing_script":
         st.markdown("""
@@ -295,7 +294,7 @@ def show_followup_tips(key):
 def comforting_lines():
     st.info("That's perfectly okay. Remember, you can always revisit these resources later. You're doing your best, and that's enough.")
 
-# LISTENER MODE
+
 def comforting_response(user_message):
     comforting_phrases = [
         "Thank you for trusting me with your thoughts. I'm here to listen, no judgment.",
@@ -313,7 +312,7 @@ def comforting_response(user_message):
         "Feel free to say as much or as little as you want."
     )
 
-# DOWNLOAD UTILITIES
+
 def remove_emojis(text):
     # Remove all non-latin-1 characters (including emojis)
     return re.sub(r'[^\x00-\xff]', '', text)
@@ -336,7 +335,7 @@ def get_full_session_pdf():
     pdf_output.seek(0)
     return pdf_output
 
-# MAIN LOGIC
+
 if agent_mode == "Support Plan":
     st.markdown("## 🌱 Personal Information")
     with st.form("wellbeing_form"):
@@ -397,7 +396,7 @@ if agent_mode == "Support Plan":
             st.warning(followup)
             log_session("## Long-term Support Strategy\n" + followup)
 
-# --- THE FOLLOW-UP BLOCK HERE ---
+
 st.markdown("## 🔁 Follow-up")
 st.markdown("Would you like a short guided script for the following?")
 
@@ -477,13 +476,13 @@ elif agent_mode == "Listener (Vent & Comfort)":
         else:
             st.warning("Please write something to share.")
 
-    # Display conversation
+    
     for speaker, msg in st.session_state.vent_history:
         if speaker == "user":
             st.markdown(f"<div style='background:#eb2f93;padding:0.7em 1em;border-radius:0.8em;margin-bottom:0.2em;'><b>You:</b> {msg}</div>", unsafe_allow_html=True)
         else:
             st.markdown(f"<div style='background:#f8f9fa;padding:0.7em 1em;border-radius:0.8em;margin-bottom:1em;'><b>Agent:</b> {msg}</div>", unsafe_allow_html=True)
-# STRESS RELIEVER SONG & DOWNLOAD SECTION
+
 
 st.markdown("""
 ---
@@ -505,7 +504,7 @@ st.download_button(
     file_name="music_therapy_session.txt",
     mime="text/plain"
 )
-# HELPLINE SECTION
+
 st.markdown("""
 <div style="background: #06b1c4; border-radius: 1em; padding: 1em; margin-top: 2em;">
 <b>⚠️ Important Notice</b><br>
