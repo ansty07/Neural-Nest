@@ -147,12 +147,12 @@ def set_theme(mode):
         }
          
         [data-testid="stSidebar"], .css-1d391kg {
-            background: #2d2f36 !important;
+            background: #8c18ba !important;
             color: #fff !important;
         }
         
         header[data-testid="stHeader"] {
-            background: #2d2f36 !important;
+            background: #8c18ba !important;
             color: #fff !important;
         }
         header[data-testid="stHeader"] * {
