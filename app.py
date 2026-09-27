@@ -481,7 +481,7 @@ elif agent_mode == "Listener (Vent & Comfort)":
         if speaker == "user":
             st.markdown(f"<div style='background:#eb2f93;padding:0.7em 1em;border-radius:0.8em;margin-bottom:0.2em;'><b>You:</b> {msg}</div>", unsafe_allow_html=True)
         else:
-            st.markdown(f"<div style='background:#f8f9fa;padding:0.7em 1em;border-radius:0.8em;margin-bottom:1em;'><b>Agent:</b> {msg}</div>", unsafe_allow_html=True)
+            st.markdown(f"<div style='background:#e0b0ff;padding:0.7em 1em;border-radius:0.8em;margin-bottom:1em;'><b>Agent:</b> {msg}</div>", unsafe_allow_html=True)
 
 
 st.markdown("""
